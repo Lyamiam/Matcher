@@ -7,7 +7,11 @@ app = Flask(__name__)
 
 @app.route("/")
 def titleScreen():
-    return "Welcome to Matcher"
+    return render_template("titleScreen.html")
+
+@app.route("/", methods=["POST"])
+def loggedInTitleScreen():
+    return render_template("titleScreen.html")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=80)
